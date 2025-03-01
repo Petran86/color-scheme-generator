@@ -8,7 +8,7 @@ fetch("https://www.thecolorapi.com/scheme?hex=2b2b2b&mode=monochrome")
      * 3. fetch request with those values
      * 4. render the colors 
      * <div> //columns
-     *  <div></div> //color
+     *  <div style={backgroundColor:}></div> //color
      *  <span></span> // hex
      * </div>
      */
