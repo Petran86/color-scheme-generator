@@ -1,6 +1,3 @@
-// fetch("https://www.thecolorapi.com/scheme?hex=2b2b2b&mode=monochrome")
-//     .then(res => res.json())
-//     .then(data => console.log(data.colors))
 document.getElementById("schemes-form").addEventListener("submit", async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
@@ -15,7 +12,7 @@ document.getElementById("schemes-form").addEventListener("submit", async (e) => 
         schemesHTML += data.colors.map((color) => {
             return `
             <div class="schemes-col">
-                <div class="schemes-color" style={backgroundColor: ${color.hex.value}}></div>
+                <div class="schemes-color"}></div>
                 <p class="color-value">${color.name.value}</p>
             </div>
         `
