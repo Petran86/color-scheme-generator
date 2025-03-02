@@ -19,7 +19,7 @@ document.getElementById("schemes-form").addEventListener("submit", async (e) => 
                 <p class="color-value">${color.name.value}</p>
             </div>
         `
-        })
+        }).join(" ")
         document.getElementById("color-schemes").innerHTML = schemesHTML
     }
     catch(err){
