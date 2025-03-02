@@ -1,6 +1,31 @@
-fetch("https://www.thecolorapi.com/scheme?hex=2b2b2b&mode=monochrome")
-    .then(res => res.json())
-    .then(data => console.log(data.colors))
+// fetch("https://www.thecolorapi.com/scheme?hex=2b2b2b&mode=monochrome")
+//     .then(res => res.json())
+//     .then(data => console.log(data.colors))
+document.getElementById("schemes-form").addEventListener("submit", async (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    const color = formData.get("color").replace(/[^a-zA-Z0-9]/g, '')
+    const scheme = document.getElementById("schemes").value
+    let schemesHTML = ``
+
+    try{
+        const res = await fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${scheme}`)
+        const data = await res.json()
+        console.log(data)
+        schemesHTML += data.colors.map((color) => {
+            return `
+            <div class="schemes-col">
+                <div class="schemes-color" style={backgroundColor: ${color.hex.value}}></div>
+                <p class="color-value">${color.name.value}</p>
+            </div>
+        `
+        })
+        document.getElementById("color-schemes").innerHTML = schemesHTML
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 
     /** Rough plan
      * 1. event listener on form submit

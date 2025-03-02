@@ -15,24 +15,26 @@
 </head>
 
 <body>
-    <header>
-        <form action="">
-            <input type="text" id="color" aria-label="Input color value" required>
-            <select name="schemes" id="schemes" aria-label="Select scheme">
-                <option value="">Monochrome</option>
-                <option value="">Monochrome-dark</option>
-                <option value="">Monochrome-light</option>
-                <option value="">Analogic</option>
-                <option value="">Complement</option>
-                <option value="">Analogic-complement</option>
-                <option value="">Triad</option>
-            </select>
-            <button>Get color scheme</button>
-        </form>
-    </header>
-    <main>
-        <div id="color-schemes"></div>
-    </main>
+    <div class="container">
+        <header>
+            <form action="" id="schemes-form">
+                <input type="text" name="color" id="color" aria-label="Input color value" required>
+                <select name="schemes" id="schemes" aria-label="Select scheme">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
+                </select>
+                <button>Get color scheme</button>
+            </form>
+        </header>
+        <main>
+            <div id="color-schemes"></div>
+        </main>
+    </div>
     <script src="./index.js" type="module"></script>
 </body>
 
