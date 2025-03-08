@@ -12,8 +12,9 @@ document.getElementById("schemes-form").addEventListener("submit", async (e) => 
         schemesHTML += data.colors.map((color) => {
             return `
             <div class="schemes-col">
-                <div class="schemes-color"}></div>
+                <img src=${color.image.bare} class="schemes-color"} />
                 <p class="color-value">${color.name.value}</p>
+                <p class="color-hex">${color.hex.value}</p>
             </div>
         `
         }).join(" ")
